@@ -1,0 +1,67 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "extends": "eslint:recommended",
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "mocha": true
+    },
+    "globals": {
+        "analytics": true,
+        "analyticsTrackSpy": true,
+        "BROWSER": true,
+        "require": true,
+        "JSON": true,
+        "ga": true,
+        "gaSpy": true
+    },
+    "rules": {
+        "strict": 0,
+        "quotes": [2, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+        "jsx-quotes": [2, "prefer-single"],
+        "indent": [2, 4],
+        "max-depth": [2, 3],
+        "max-statements": [2, 15],
+        "complexity": [2, 6],
+        "max-params": [2, 4],
+        "new-cap": 2,
+        "no-bitwise": 2,
+        "radix": 2,
+        "max-nested-callbacks": [2, 4],
+        "no-nested-ternary": 2,
+        "keyword-spacing": [2, {"before": true}],
+        "space-before-blocks": [2, "always"],
+        "space-before-function-paren": [2, "always"],
+        "no-underscore-dangle": 0,
+        "no-trailing-spaces": 2,
+        "no-multiple-empty-lines": [2, {"max": 3, "maxEOF": 1}],
+        "eol-last": 2,
+        "semi": [2, "always"],
+        "eqeqeq": 2,
+
+        "react/display-name": 0,
+        "react/jsx-boolean-value": 2,
+        "react/no-did-mount-set-state": 2,
+        "react/no-did-update-set-state": 2,
+        "react/no-multi-comp": 2,
+        "react/self-closing-comp": 2,
+        "react/sort-comp": 2,
+        "react/jsx-wrap-multilines": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
+        "react/no-deprecated": 2,
+        "react/no-direct-mutation-state": 2,
+        "react/no-find-dom-node": 0,
+        "react/no-is-mounted": 2,
+        "react/no-unknown-property": 2,
+        "react/prop-types": 2,
+        "react/react-in-jsx-scope": 2,
+        "react/require-render-return": 2
+    }
+}
