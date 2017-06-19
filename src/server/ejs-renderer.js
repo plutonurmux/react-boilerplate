@@ -17,8 +17,6 @@ const ejsRender = (name , params = {}) => {
 
 const handleRender = (port, req, res) => {
     const context = {};
-    // const memoryHistory = createMemoryHistory(req.url);
-    console.log(req.url);
     const html = renderToString(
       <StaticRouter location={req.url} context={context}>
          <App/>

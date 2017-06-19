@@ -12,6 +12,7 @@ fs.readdirSync('node_modules')
 
 module.exports = {
     entry: [
+        'babel-polyfill',
         './src/server/server.js'
     ],
     target: 'node',

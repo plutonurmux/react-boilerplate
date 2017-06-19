@@ -1,19 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import DemoMain from '../pages/demo-main/demo-main';
-import Home from '../pages/home/home';
-import DemoOneRoute from '../pages/demo-one/demo-one-route';
-import DemoTwo from '../pages/demo-two/demo-two';
+import Container from 'container/container';
+import Home from 'home/home';
+import DemoOneRoute from 'demo-one/demo-one-route';
+import DemoTwo from 'demo-two/demo-two';
 
 export const App = () => (
-  <DemoMain>
-    <Switch>
-        <Route component={Home} exact path={'/'} />
-        <Route component={DemoOneRoute} path={'/demoOne'} />
-        <Route component={DemoTwo} path={'/demoTwo'} />
-    </Switch>
-  </DemoMain>
+  <Container>
+      <Switch>
+          <Route component={Home} exact path={'/'} />
+          <Route component={DemoOneRoute} path={'/demoOne'} />
+          <Route component={DemoTwo} path={'/demoTwo'} />
+      </Switch>
+  </Container>
 );
 
 

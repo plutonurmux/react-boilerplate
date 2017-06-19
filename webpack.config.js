@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = function () {
     var webpackConfig = {
         entry: {
-            app: './src/client/app.js'
+            app: ['babel-polyfill', './src/client/app.js']
         },
         output: {
             path: path.resolve('build'),

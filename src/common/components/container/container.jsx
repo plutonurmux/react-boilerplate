@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DemoMain = ({children}) => (
+const Container = ({children}) => (
     <div>
-      <h1>Main</h1>
+      <h1>Container</h1>
       {children}
     </div>
 );
 
-DemoMain.propTypes = {
+Container.propTypes = {
     children: PropTypes.object
 };
 
-export default DemoMain;
+export default Container;
