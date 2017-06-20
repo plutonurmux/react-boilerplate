@@ -1,9 +1,10 @@
 import React from 'react';
+import { switchRouteComponents } from './routes';
 
-const DemoOne = () => (
+const DemoOneRoute = () => (
     <div>
-      <h1>Demo one page</h1>
+      {switchRouteComponents()}
     </div>
 );
 
-export default DemoOne;
+export default DemoOneRoute;
