@@ -1,6 +1,3 @@
-import React from 'react';
-import { Switch } from 'react-router-dom';
-
 import routerRender from './RouteRender';
 import Home from 'home/home';
 import DemoOne from 'demo-one/demo-one';
@@ -19,7 +16,5 @@ export const routes = [{
 }];
 
 export const switchRouteComponents = () => (
-    <Switch>
-      {routerRender(routes)}
-    </Switch>
+    routerRender(routes)
 );

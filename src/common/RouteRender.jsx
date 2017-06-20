@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-export default (routes) => {
-    return (routes.map((route, index) => (
-        <Route key={index} {...route} />
-    )));
-};
+export default (routes) => (
+    <Switch>
+      {
+          routes.map((route, index) => (
+            <Route key={index} {...route} />
+          ))
+      }
+    </Switch>
+);
