@@ -4,13 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter, syncHistoryWithStore } from 'react-router-redux';
 
 import { App } from '../common/App';
 import { initializeStore } from '../common/Store';
 
-const history = createHistory();
+const browserHistory = createHistory();
 const store = initializeStore(history, window.__INITIAL_STATE__);
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
   <Provider store={store}>
