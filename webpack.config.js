@@ -18,6 +18,23 @@ module.exports = function () {
                 options: {
                     presets:[ 'es2015', 'react', 'stage-2']
                 }
+            }, {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader'
+                    }
+                ]
             }]
         },
         plugins: [],
