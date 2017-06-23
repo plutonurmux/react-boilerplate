@@ -1,8 +1,8 @@
 import React from 'react';
-import './demo-one-child.css';
+import styles from './demo-one-child.css';
 
 const DemoOneChild = () => (
-    <div className='title'>
+    <div className={styles.title}>
       <h1>Demo one child</h1>
     </div>
 );
