@@ -29,6 +29,21 @@ module.exports = {
             options: {
                 presets:[ 'es2015', 'react', 'stage-2']
             }
+        }, {
+            test: /\.css$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'style-loader',
+            }, {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    importLoaders: 1,
+                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+            }, {
+                loader: 'postcss-loader'
+            }]
         }]
     },
     devtool: 'source-map',
