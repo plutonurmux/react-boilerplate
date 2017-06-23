@@ -1,0 +1,14 @@
+:root {
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-large: 18px;
+    --font-size-extra-large: 21px;
+    --font-size-huge: 42px;
+
+    --font-weight-light: 300;
+    --font-weight-normal: normal;
+    --font-weight-bold: bold;
+    --font-weight-heavy: 900;
+
+    --font-family: helvetica, arial, sans-serif;
+}
