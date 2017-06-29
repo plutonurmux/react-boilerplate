@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = function () {
     var webpackConfig = {
@@ -36,7 +37,9 @@ module.exports = function () {
                 }]
             }]
         },
-        plugins: [],
+        plugins: [
+            new webpack.optimize.ModuleConcatenationPlugin()
+        ],
         resolve: {
             modules: ['node_modules', 'src/pages', 'src/common/components'],
             extensions: ['.js', '.jsx'],
