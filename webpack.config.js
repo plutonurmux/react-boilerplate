@@ -5,6 +5,7 @@ module.exports = function () {
         entry: {
             app: ['babel-polyfill', './src/client/app.js']
         },
+        target: 'web',
         output: {
             path: path.resolve('build'),
             filename: 'client.js'
@@ -18,14 +19,28 @@ module.exports = function () {
                 options: {
                     presets:[ 'es2015', 'react', 'stage-2']
                 }
+            }, {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'style-loader',
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        importLoaders: 1,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }
+                }, {
+                    loader: 'postcss-loader'
+                }]
             }]
         },
         plugins: [],
         resolve: {
             modules: ['node_modules', 'src/pages', 'src/common/components'],
             extensions: ['.js', '.jsx'],
-            alias: {
-            }
+            alias: {}
         },
         resolveLoader: {
         }
