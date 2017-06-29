@@ -1,5 +1,6 @@
 var path = require('path');
 var fs = require('fs');
+var webpack = require('webpack');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
@@ -45,6 +46,9 @@ module.exports = {
         }]
     },
     devtool: 'source-map',
+    plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin()
+    ],
     resolve: {
         modules: ['node_modules', 'src/pages', 'src/common/components'],
         extensions: ['.js', '.jsx'],
