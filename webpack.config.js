@@ -7,7 +7,7 @@ module.exports = function () {
             app: [
                 'babel-polyfill',
                 'react-hot-loader/patch',
-                './src/client/app.js',
+                './src/client.js',
                 'webpack-hot-middleware/client'
             ]
         },
