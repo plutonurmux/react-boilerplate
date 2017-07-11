@@ -4,22 +4,31 @@ var webpack = require('webpack');
 module.exports = function () {
     var webpackConfig = {
         entry: {
-            app: ['babel-polyfill', './src/client/app.js']
+            app: [
+                'babel-polyfill',
+                'react-hot-loader/patch',
+                './src/client.js',
+                'webpack-hot-middleware/client'
+            ]
         },
         target: 'web',
         output: {
             path: path.resolve('build'),
-            filename: 'client.js'
+            filename: 'client.js',
+            publicPath: '/'
         },
-        devtool: '#eval',
+        devtool: 'cheap-source-map',
         module: {
             rules: [{
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets:[ 'es2015', 'react', 'stage-2']
-                }
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        cacheDirectory: true,
+                        presets:[ 'es2015', 'react', 'stage-2']
+                    }
+                }]
             }, {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -38,7 +47,8 @@ module.exports = function () {
             }]
         },
         plugins: [
-            new webpack.optimize.ModuleConcatenationPlugin()
+            new webpack.optimize.ModuleConcatenationPlugin(),
+            new webpack.HotModuleReplacementPlugin()
         ],
         resolve: {
             modules: ['node_modules', 'src/pages', 'src/common/components'],

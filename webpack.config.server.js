@@ -1,15 +1,6 @@
 var path = require('path');
-var fs = require('fs');
 var webpack = require('webpack');
-
-var nodeModules = {};
-fs.readdirSync('node_modules')
-    .filter(function (x) {
-        return ['.bin'].indexOf(x) === -1;
-    })
-    .forEach(function (mod) {
-        nodeModules[mod] = 'commonjs ' + mod;
-    });
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: [
@@ -19,17 +10,21 @@ module.exports = {
     target: 'node',
     output: {
         path: path.resolve('build'),
-        filename: 'server.js'
+        filename: 'server.js',
+        publicPath: '/'
     },
-    externals: nodeModules,
+    externals: [nodeExternals()],
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
-            options: {
-                presets:[ 'es2015', 'react', 'stage-2']
-            }
+            use:[{
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true,
+                    presets:[ 'es2015', 'react', 'stage-2']
+                }
+            }]
         }, {
             test: /\.css$/,
             exclude: /node_modules/,
