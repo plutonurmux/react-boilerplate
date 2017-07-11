@@ -7,7 +7,8 @@
     "lint": "./node_modules/.bin/eslint *.js app --ext .js,.jsx",
     "build:fe": "./node_modules/.bin/webpack",
     "build:be": "./node_modules/.bin/webpack --config webpack.config.server.js",
-    "start": "node ./build/server.js"
+    "start": "node ./build/server.js",
+    "dev": "./node_modules/.bin/npm-run-all --serial build:be --parallel start"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.1",
+    "npm-run-all": "^4.0.2",
     "postcss-cssnext": "^2.11.0",
     "postcss-for": "^2.1.1",
     "postcss-import": "^10.0.0",
