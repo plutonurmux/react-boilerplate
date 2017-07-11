@@ -8,10 +8,10 @@ import { initializeStore } from './common/Store';
 const browserHistory = createHistory();
 const store = initializeStore(browserHistory, window.__INITIAL_STATE__);
 
-const render = () => {
+const render = (Component) => {
     ReactDOM.render((
         <AppContainer>
-            <Client
+            <Component
               history={browserHistory}
               store={store}
             />
@@ -19,10 +19,13 @@ const render = () => {
     ), document.querySelector('[data-role="app"]'));
 };
 
-render();
+render(Client);
 
 if (module.hot) {
-    module.hot.accept('./client/Client.jsx', () => { render(); });
+    module.hot.accept('./client/Client', () => {
+        const nextClient = require('./client/Client').Client;
+        render(nextClient);
+    });
 }
 
 //reference

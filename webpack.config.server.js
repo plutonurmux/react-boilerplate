@@ -10,7 +10,8 @@ module.exports = {
     target: 'node',
     output: {
         path: path.resolve('build'),
-        filename: 'server.js'
+        filename: 'server.js',
+        publicPath: '/'
     },
     externals: [nodeExternals()],
     module: {

@@ -14,7 +14,8 @@ module.exports = function () {
         target: 'web',
         output: {
             path: path.resolve('build'),
-            filename: 'client.js'
+            filename: 'client.js',
+            publicPath: '/'
         },
         devtool: 'cheap-source-map',
         module: {
