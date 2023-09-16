@@ -5,7 +5,8 @@
 * React Redux
 * React Router v4
 * Post CSS
-* Webpack 2
+* Webpack 3
+* ESLint
 
 # Environment Setup
 * install [git](https://git-scm.com/)
